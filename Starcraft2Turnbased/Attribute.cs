@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Starcraft2Turnbased
 {
-    public class Unit : Visible
+    public class Attribute
     {
-        public static List<Upgrade> Upgrades { get; set; }
-        public int Move { get; set; }
+        public enum Attributes
+        {
+            Light, Armored, Biological, Mechanical, Psionic, Massive, Structure, Heroic
+        }
     }
 }

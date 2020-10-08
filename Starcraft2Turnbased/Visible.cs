@@ -10,6 +10,16 @@ namespace Starcraft2Turnbased
     public abstract class Visible
     {
         public UiPart uiPart { get; set; }
+        public int HP { get; set; }
+        public int Armor { get; set; }
+        public int Move { get; set; }
+        public int SightRange { get; set; }
+        public int AttackRange { get; set; }
+        public int Minerals { get; set; }
+        public int Gas { get; set; }
+        public int AttackDamage { get; set; }
+        public float AttackCooldown { get; set; }
+        public List<Attribute> Attributes { get; set; }
         public Vector3 Position { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
