@@ -9,6 +9,6 @@ namespace Starcraft2Turnbased
     public class Unit : Visible
     {
         public static List<Upgrade> Upgrades { get; set; }
-        public int Move { get; set; }
+        
     }
 }
