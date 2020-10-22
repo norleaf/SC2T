@@ -1,0 +1,59 @@
+namespace Starcraft2Turnbased                                       
+{                                                               
+
+    public class Armory : Unit                                 
+    {                                                           
+        public Armory()                                                        
+        {                                                           
+        }                                                           
+    }                                                           
+
+    public class Barracks : Unit                                 
+    {                                                           
+        public Barracks()                                                        
+        {                                                           
+        }                                                           
+    }                                                           
+
+    public class Command_Center : Unit                                 
+    {                                                           
+        public Command_Center()                                                        
+        {                                                           
+        }                                                           
+    }                                                           
+
+    public class Factory : Unit                                 
+    {                                                           
+        public Factory()                                                        
+        {                                                           
+        }                                                           
+    }                                                           
+
+    public class Marine : Unit                                 
+    {                                                           
+        public Marine()                                                        
+        {                                                           
+        }                                                           
+    }                                                           
+
+    public class SCV : Unit                                 
+    {                                                           
+        public SCV()                                                        
+        {                                                           
+        }                                                           
+    }                                                           
+
+    public class Siege_Tank_Siege_Mode : Unit                                 
+    {                                                           
+        public Siege_Tank_Siege_Mode()                                                        
+        {                                                           
+        }                                                           
+    }                                                           
+
+    public class Siege_Tank_Tank_Mode : Unit                                 
+    {                                                           
+        public Siege_Tank_Tank_Mode()                                                        
+        {                                                           
+        }                                                           
+    }                                                           
+}                                                               

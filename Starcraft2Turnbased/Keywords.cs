@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Starcraft2Turnbased
 {
-    public class Attribute
+    public enum Keywords
     {
-        public enum Attributes
-        {
-            Light, Armored, Biological, Mechanical, Psionic, Massive, Structure, Heroic
-        }
+        Light, Armored, Biological, Mechanical, Psionic, Massive, Structure, Heroic
     }
 }
