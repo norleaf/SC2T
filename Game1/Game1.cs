@@ -19,8 +19,8 @@ namespace Game1
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private InputController inputController;
-        
-        Texture2D tankSiege, tankTank;
+
+        List<Texture2D> texture2Ds;
 
         Draw3DUtils Draw3D;
 
@@ -31,7 +31,7 @@ namespace Game1
 
             Content.RootDirectory = "Content";
 
-            
+            texture2Ds = new List<Texture2D>();
             
 
 
@@ -56,7 +56,6 @@ namespace Game1
 
             Draw3D = new Draw3DUtils(GraphicsDevice, Content);
 
-            new Stimpack();
 
           //  ClassAutomation.CreateClassesByFileNames();
             base.Initialize();
@@ -76,6 +75,7 @@ namespace Game1
             Console.WriteLine(Environment.CurrentDirectory);
             Console.WriteLine(Content.RootDirectory);
 
+            texture2Ds.Add(Content.Load<Texture2D>("Terran/Structures/Command_Center"));
             
 
             // TODO: use this.Content to load your game content here
@@ -120,11 +120,11 @@ namespace Game1
             GraphicsDevice.Clear(Color.Gray);
             spriteBatch.Begin();
             //spriteBatch.Draw(Target.Tex, new Rectangle((int)Target.Pos.X, (int)Target.Pos.Y, 700, 700), Color.White);
-            //foreach (var sprite in choices)
-            //{
+            foreach (var sprite in texture2Ds)
+            {
 
-            //    spriteBatch.Draw(sprite.Tex, new Rectangle((int)sprite.Pos.X, (int)sprite.Pos.Y, 250, 250), Color.White);
-            //}
+                spriteBatch.Draw(sprite, new Rectangle(sprite.Width, sprite.Height, sprite.Width, sprite.Height), Color.White);
+            }
             //spriteBatch.Draw(Correct.Tex, Correct.Pos, Color.White);
             //  spriteBatch.Draw(tankTank, Vector2.Zero, Color.White);
 
