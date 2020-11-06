@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameState.cs" />
     <Compile Include="Keywords.cs" />
     <Compile Include="DrawTools.cs" />
     <Compile Include="ListExtensions.cs" />

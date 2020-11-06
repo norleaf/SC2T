@@ -27,7 +27,7 @@ namespace Starcraft2Turnbased
             return maxSupply <= 200 ? maxSupply : 200;
         }
 
-        public Player() : base(null)
+        public Player() : base()
         {
             Minerals = 50;
             Units = new List<Tech>();

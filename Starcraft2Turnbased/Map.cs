@@ -14,7 +14,10 @@ namespace Starcraft2Turnbased
             Width = w;
             Height = h;
             StartLocations = new List<StartLocation>();
-            StartLocations.AddEach(startLocations);
+            foreach(var startLocation in startLocations)
+            {
+                StartLocations.Add(startLocation);
+            }
         }
 
         public class StartLocation

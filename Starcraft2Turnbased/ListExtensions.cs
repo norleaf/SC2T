@@ -24,8 +24,11 @@ namespace Starcraft2Turnbased
                 tempList.Add(list[i]);
                 list.RemoveAt(i);
             }
-
-            list = tempList;
+            foreach(var item in tempList)
+            {
+                list.Add(item);
+            }
+            
         }
     }
 }

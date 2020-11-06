@@ -43,7 +43,7 @@ namespace Starcraft2Turnbased
 
         public Tech()
         {
-
+            Attributes = new List<Keywords>();
         }
 
         public Tech(Tech prototype)

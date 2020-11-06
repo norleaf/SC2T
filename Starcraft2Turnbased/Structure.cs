@@ -11,7 +11,7 @@ namespace Starcraft2Turnbased
 
         public abstract bool Available(Player player);
 
-        public Structure()
+        public Structure() : base()
         {
             Units = new List<Tech>();
             Upgrades = new List<Upgrade>();

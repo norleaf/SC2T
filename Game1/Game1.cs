@@ -18,12 +18,14 @@ namespace Game1
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        private SpriteFont defaultFont;
         private InputController inputController;
+        private Texture2D pixel;
 
-        List<Texture2D> texture2Ds;
-
+        List<Sprite> sprites;
         Draw3DUtils Draw3D;
-
+        Menu menu;
+        Match match;
         public Game1()
         {
 
@@ -31,8 +33,8 @@ namespace Game1
 
             Content.RootDirectory = "Content";
 
-            texture2Ds = new List<Texture2D>();
-            
+            sprites = new List<Sprite>();
+           
 
 
         }
@@ -52,8 +54,10 @@ namespace Game1
             //   graphics.IsFullScreen = true;
             graphics.ApplyChanges();
             this.IsMouseVisible = true;
-            inputController = new InputController();
-
+            match = new Match();
+            inputController = new InputController(match);
+            
+            
             Draw3D = new Draw3DUtils(GraphicsDevice, Content);
 
 
@@ -71,11 +75,14 @@ namespace Game1
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            defaultFont = Content.Load<SpriteFont>("def");
+            pixel = Content.Load<Texture2D>("pixel");
+            menu = new Menu(pixel);
+            inputController.Buttons.AddRange(menu.Buttons);
+            //Console.WriteLine(Environment.CurrentDirectory);
+            //Console.WriteLine(Content.RootDirectory);
 
-            Console.WriteLine(Environment.CurrentDirectory);
-            Console.WriteLine(Content.RootDirectory);
-
-            texture2Ds.Add(Content.Load<Texture2D>("Terran/Structures/Command_Center"));
+            sprites.Add(Content.Load<Texture2D>("Terran/Structures/Command_Center").ToSprite());
             
 
             // TODO: use this.Content to load your game content here
@@ -120,10 +127,20 @@ namespace Game1
             GraphicsDevice.Clear(Color.Gray);
             spriteBatch.Begin();
             //spriteBatch.Draw(Target.Tex, new Rectangle((int)Target.Pos.X, (int)Target.Pos.Y, 700, 700), Color.White);
-            foreach (var sprite in texture2Ds)
+            if (match.state == GameState.PlayerTurn)
             {
+                foreach (var sprite in sprites)
+                {
 
-                spriteBatch.Draw(sprite, new Rectangle(sprite.Width, sprite.Height, sprite.Width, sprite.Height), Color.White);
+                    spriteBatch.Draw(sprite.Texture2D, sprite.Slice, Color.White);
+                }
+            }
+            if(match.state == GameState.Menu)
+            {
+                foreach (var button in menu.Buttons)
+                {
+                    button.Draw(spriteBatch, defaultFont);
+                }
             }
             //spriteBatch.Draw(Correct.Tex, Correct.Pos, Color.White);
             //  spriteBatch.Draw(tankTank, Vector2.Zero, Color.White);

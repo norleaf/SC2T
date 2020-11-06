@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game1;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,11 @@ namespace Starcraft2Turnbased
         int turn;
         Player player;
         Map map;
+        public GameState state;
 
         public Match()
         {
+            state = GameState.Menu;
             players = new List<Player>();
             players.Add(new Terran());
             players.Add(new Terran());
